@@ -14,17 +14,23 @@ trim
 striptags
 '''
 
-# Create a home route
+# Create home route
 @app.route('/')
 @app.route('/home')
-def index():
+def home():
+    return render_template("index.html")
+
+
+# Create a info route
+@app.route('/info')
+def info():
     first_name = "Aritra"
     bold = "<strong>Bold</strong>"
     company = "hdfc bank private limited"
     cust_id = "101 202 303"
     products = ['current account', 'savings account', 'loan','locker']
 
-    return render_template("index.html", first_name=first_name,
+    return render_template("info.html", first_name=first_name,
                            bold=bold, company=company,
                            cust_id=cust_id, products=products)
 

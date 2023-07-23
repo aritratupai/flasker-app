@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Hello World</h1>
+    <p>This is the info page of falsker app (Flask Friday)</p>
+
+    <h2>Jinja variable with filters</h2>
+    <h3>My name is {{ first_name|capitalize }}</h3>
+    <p>This is {{ bold|safe }} with "safe" filter</p>
+    <p>This is not {{ bold|striptags }} with "striptags" filter</p>
+    <p>This is my company name: <strong>{{ company|title }}</strong> with "title" filter</p>
+    <p>This is my customer id: <i>{{ cust_id|trim }}</i> with "trim" filter</p>
+    
+
+    <h2>Jinja loops</h2>
+    <p>For loop</p>
+    {% for product in products %}
+        {{ product|capitalize }}<br>
+    {% endfor %}
+
+    <p>For loop reveresed</p>
+    {% for product in products|reverse %}
+        {{ product|capitalize }}<br>
+    {% endfor %}
+
+{% endblock content %}
